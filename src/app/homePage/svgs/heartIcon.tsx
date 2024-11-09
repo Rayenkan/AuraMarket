@@ -1,4 +1,7 @@
-const HeartIcon = ({className}:any) => {
+type HeartIconProps={
+  className? :string
+}
+const HeartIcon = ({className}:HeartIconProps) => {
   return (
     <svg
     className={`${className}`}

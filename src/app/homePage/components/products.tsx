@@ -26,7 +26,7 @@ export function Products({}) {
         </p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-16">
-        {products.map((item: { id:number ;image: string; title: string; description: string; price: number; discount: number | null | undefined; }, index: React.Key | null | undefined) => (
+        {products.map((item: { id:number ;image: string; title: string; description: string; price: number; discount: number | null | undefined; }) => (
           <ProductItem
             key={item.id}
             id={item.id}
