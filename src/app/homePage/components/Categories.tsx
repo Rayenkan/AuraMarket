@@ -34,7 +34,7 @@ export function Categories() {
   return (
     <div className="bg-white p-8 flex items-center flex-col">
       <div className="mb-8 text-center">
-        <p className="text-[32px] font-bold">Browse the range</p>
+        <p className="text-[32px] font-bold">Browse categories</p>
         <p className="text-gray-400">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>

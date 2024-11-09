@@ -1,6 +1,7 @@
-const HeartIcon = () => {
+const HeartIcon = ({className}:any) => {
   return (
     <svg
+    className={`${className}`}
       width="28"
       height="28"
       viewBox="0 0 28 28"

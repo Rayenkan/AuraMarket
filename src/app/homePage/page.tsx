@@ -1,4 +1,6 @@
-"use client"
+"use client";
+
+import { Products } from "./components/products";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Categories } from "./components/Categories";
 import Discover from "./components/discover";
@@ -13,6 +15,7 @@ const Page = () => {
         <TopBar />
         <Discover />
         <Categories />
+        <Products />
       </div>
     </QueryClientProvider>
   );
