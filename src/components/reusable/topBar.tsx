@@ -1,11 +1,10 @@
 "use client"
 import Image from "next/image";
 import img from "@/app/favicon.ico";
-import AccountIcon from "../svgs/accountIcon";
-import CartIcon from "../svgs/CartIcon";
-import SearchIcon from "../svgs/searchIcon";
-import HeartIcon from "../svgs/heartIcon";
 import useRouteState from "@/customHooks/useChangeRoutes";
+import AccountIcon from "@/app/homePage/svgs/accountIcon";
+import CartIcon from "@/app/homePage/svgs/CartIcon";
+import { SearchIcon, HeartIcon } from "lucide-react";
 
 const TopBar = () => {
   const { pushRoute } = useRouteState()

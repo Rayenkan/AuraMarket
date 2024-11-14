@@ -1,10 +1,10 @@
 "use client";
-import { Footer } from './components/footer';
+import { Footer } from '../../components/reusable/footer';
 import { Products } from "./components/products";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Categories } from "./components/Categories";
 import Discover from "./components/discover";
-import TopBar from "./components/topBar";
+import TopBar from '@/components/reusable/topBar';
 
 
 const queryClient = new QueryClient();
