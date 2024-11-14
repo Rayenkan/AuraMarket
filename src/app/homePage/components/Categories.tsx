@@ -57,6 +57,7 @@ export function Categories() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+      
     </div>
   );
 }
