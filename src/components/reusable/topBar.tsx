@@ -16,7 +16,7 @@ const TopBar = () => {
       </div>
       <div className="flex flex-row items-center gap-16 [&>*]:cursor-pointer">
         <p className="text-black font-medium text-base " onClick={()=>pushRoute("/homePage")}>Home</p>
-        <p className="text-black font-medium text-base" onClick={()=>pushRoute("/Shop")}>Shop</p>
+        <p className="text-black font-medium text-base" onClick={()=>pushRoute("/products")}>Products</p>
         <p className="text-black font-medium text-base" onClick={()=>pushRoute("/AboutUs")}>About</p>
         <p className="text-black font-medium text-base" onClick={()=>pushRoute("/Contact")}>Contact</p>
       </div>

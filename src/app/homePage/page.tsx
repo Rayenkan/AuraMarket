@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Categories } from "./components/Categories";
 import Discover from "./components/discover";
 import TopBar from '@/components/reusable/topBar';
+import { Separator } from '@/components/ui/separator';
 
 
 const queryClient = new QueryClient();
@@ -16,7 +17,8 @@ const Page = () => {
         <TopBar />
         <Discover />
         <Categories />
-        <Products />
+        <Products limit={8} />
+        <Separator className='my-12'/>
         <Footer     />
       </div>
     </QueryClientProvider>
