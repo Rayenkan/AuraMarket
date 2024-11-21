@@ -8,6 +8,7 @@ import useProductStore from "@/components/stores/productsStore";
 import useUpdateSearchParams from "@/customHooks/useUpdateSearchParams";
 import { PaginationComp } from "./_components/pagination";
 import { useEffect } from "react";
+import BenefitsBar from "./_components/benefitsBar";
 
 const Page = () => {
   const queryClient = new QueryClient();
@@ -21,18 +22,18 @@ const Page = () => {
         ? Number(getSearchParam("setNbProductsToShow"))
         : 10
     );
-  }, [getSearchParam, setNbProductsToShow]);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
-     
-        <div className="h-screen w-screen bg-white overflow-x-hidden">
-          <TopBar />
-          <Filters />
-          <Products limit={nbProductsToShow} sortBy={sortBy} />
-          <PaginationComp />
-          <Footer />
-        </div>
+      <div className="h-screen w-screen bg-white overflow-x-hidden">
+        <TopBar />
+        <Filters />
+        <Products limit={nbProductsToShow} sortBy={sortBy} />
+        <PaginationComp />
+        <BenefitsBar/>
+        <Footer />
+      </div>
     </QueryClientProvider>
   );
 };
