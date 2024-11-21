@@ -1,41 +1,30 @@
 import React, { useEffect, useState } from "react";
 import ProductItem from "./productItem";
-import { useProductsQuery } from "../utils/fetchProducts";
+import { useProductsQuery } from "../_utils/fetchProducts";
 import useProductStore from "@/components/stores/productsStore";
 import useUpdateSearchParams from "@/customHooks/useUpdateSearchParams";
-import { getPaginatedProducts } from "@/app/products/utils/getPaginatedProducts";
+import { getPaginatedProducts } from "@/app/products/_utils/getPaginatedProducts";
+import { ProductItemType } from "@/lib/types";
 
 type ProductsProps = {
   limit?: number;
   sortBy?: string;
 };
 
-type ProductItemType = {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-  discount: number | null | undefined;
-};
-
 export function Products({ sortBy }: ProductsProps) {
-  const { getSearchParam, setSearchParam } = useUpdateSearchParams();
-  const pageNumber = Number(getSearchParam("page")) || 1;
+  const { getSearchParam } = useUpdateSearchParams();
   const { nbProductsToShow } = useProductStore();
+  const pageNumber = Number(getSearchParam("page")) || 1;
   const {
     data: products,
     isLoading,
     isError,
     error,
   } = useProductsQuery(sortBy || "asc");
-
-  // State for paginated products
   const [paginatedProducts, setPaginatedProducts] = useState<ProductItemType[]>(
     []
   );
 
-  // Update paginated products when dependencies change
   useEffect(() => {
     if (products) {
       const paginated = getPaginatedProducts(
@@ -63,9 +52,9 @@ export function Products({ sortBy }: ProductsProps) {
           <ProductItem
             key={item.id}
             id={item.id}
-            imgUrl={item.image}
-            productName={item.title}
-            productDesc={item.description}
+            image={item.image}
+            title={item.title}
+            description={item.description}
             price={item.price}
             discount={item.discount}
           />

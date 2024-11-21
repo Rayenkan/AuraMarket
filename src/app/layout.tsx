@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "./globals.css"; // Only import once
+import { Suspense } from "react";
 // Configure Google Poppins font
 const poppins = Poppins({
   subsets: ["latin"],
@@ -26,8 +27,7 @@ export default function RootLayout({
     <html lang="en" className={poppins.className}>
       <body>
         <NextTopLoader />
-
-        {children}
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
       </body>
     </html>
   );

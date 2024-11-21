@@ -9,13 +9,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import CategorieItem from "./CategorieItem";
-import fetchCategories from "../utils/fetchCategories";
-
-// Define the type for the fetched categories
-interface Category {
-  categorieName: string;
-  categorieImgUrl: string;
-}
+import fetchCategories from "../_utils/fetchCategories";
+import { Category } from "@/lib/types";
 
 export function Categories() {
   const {
@@ -57,7 +52,6 @@ export function Categories() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      
     </div>
   );
 }

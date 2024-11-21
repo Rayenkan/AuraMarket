@@ -8,7 +8,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import useProductStore from "@/components/stores/productsStore";
-import { useProductsQuery } from "@/app/homePage/utils/fetchProducts";
+import { useProductsQuery } from "@/app/homePage/_utils/fetchProducts";
 import useUpdateSearchParams from "@/customHooks/useUpdateSearchParams";
 
 export const PaginationComp = () => {
@@ -18,14 +18,12 @@ export const PaginationComp = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Calculate total pages only when `products` or `nbProductsToShow` changes
   const totalPages = useMemo(() => {
-    if (!products || nbProductsToShow <= 0) return 1; // Default to 1 page if invalid
+    if (!products || nbProductsToShow <= 0) return 1;
     return Math.ceil(products.length / nbProductsToShow);
   }, [products, nbProductsToShow]);
 
   const handlePageChange = (page: number) => {
-    // Prevent unnecessary updates
     if (page < 1 || page > totalPages || page === currentPage) return;
     setCurrentPage(page);
     setSearchParam("page", String(page));

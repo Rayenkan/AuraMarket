@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterIcon } from "../svgs/filterIcon";
+import { FilterIcon } from "../_svgs/filterIcon";
 import {
   Sheet,
   SheetContent,

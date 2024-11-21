@@ -4,9 +4,9 @@ import type { NextRequest } from "next/server";
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  console.log("Middleware triggered:", {pathname });
+  console.log("Middleware triggered:", { pathname });
 
-  // Redirect to home page 
+  // Redirect to home page
   if (pathname == "/") {
     return NextResponse.redirect(new URL("/homePage", request.url));
   }

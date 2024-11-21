@@ -1,13 +1,5 @@
-import { useQuery, QueryKey } from "@tanstack/react-query";
-
-type Product = {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-  discount: number | null | undefined;
-};
+import { Product } from "@/lib/types";
+import { useQuery } from "@tanstack/react-query";
 
 const fetchProducts = async (sortBy?: string): Promise<Product[]> => {
   const response = await fetch(

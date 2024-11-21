@@ -1,5 +1,5 @@
 import React from "react";
-export function Icon1({}) {
+export default function Icon1({}) {
   return (
     <svg
       className="cursor-pointer"

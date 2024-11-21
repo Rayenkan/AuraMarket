@@ -20,7 +20,7 @@ const fetchImageUrl = async (category: string) => {
     `https://api.unsplash.com/search/photos?query=${category}&client_id=${apiKey}`
   );
   const data = await response.json();
-  const imageUrl = data.results[0]?.urls?.regular || ""; // Default to an empty string if no image is found
+  const imageUrl = data.results[0]?.urls?.regular || "";
   return imageUrl;
 };
 

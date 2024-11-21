@@ -1,8 +1,7 @@
-import { FilterSheet } from './filterSheet';
+import { FilterSheet } from "./filterSheet";
 import React from "react";
-import { Icon2 } from "../svgs/icon2";
-import { Icon1 } from "../svgs/icon1";
-
+import Icon2  from "../_svgs/icon2";
+import Icon1  from "../_svgs/icon1";
 
 import { useEffect } from "react";
 import { Input } from "@/components/ui/input";
@@ -16,7 +15,7 @@ import {
 import { ArrowDown, ArrowUp } from "lucide-react";
 import useProductStore from "@/components/stores/productsStore";
 import useUpdateSearchParams from "@/customHooks/useUpdateSearchParams";
-import { useProductsQuery } from "@/app/homePage/utils/fetchProducts";
+import { useProductsQuery } from "@/app/homePage/_utils/fetchProducts";
 
 export function Filters() {
   const { setSearchParam } = useUpdateSearchParams();
@@ -31,12 +30,14 @@ export function Filters() {
     if (nbProductsToShow) {
       setSearchParam("setNbProductsToShow", String(nbProductsToShow));
     }
-  }, [sortBy, nbProductsToShow]);
+  }, [sortBy, nbProductsToShow, setSearchParam]);
+
   if (isLoading) return <div>Loading...</div>;
+
   return (
     <div className="h-[100px] bg-[#f9f1e7] flex items-center justify-between px-[4%] ">
       <div className="flex items-center justify-start space-x-6">
-       <FilterSheet     />
+        <FilterSheet />
 
         <Icon1 />
         <Icon2 />

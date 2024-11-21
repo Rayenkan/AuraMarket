@@ -1,8 +1,8 @@
 import React from "react";
-export function Icon2({}) {
+export default function Icon2({}) {
   return (
     <svg
-    className="cursor-pointer"
+      className="cursor-pointer"
       width="24"
       height="24"
       viewBox="0 0 24 24"

@@ -5,10 +5,15 @@ import { useState, useEffect } from "react";
 
 export default function useRouteState() {
   const router = useRouter();
-  const [routeParams, setRouteParams] = useState<Record<string, string> | null>(null);
+  const [routeParams, setRouteParams] = useState<Record<string, string> | null>(
+    null
+  );
   const [currentRoute, setCurrentRoute] = useState<string>("");
 
-  const pushRoute = async (path: string, queryParams: Record<string, string> | null = null) => {
+  const pushRoute = async (
+    path: string,
+    queryParams: Record<string, string> | null = null
+  ) => {
     let newPath: string = path;
     if (queryParams) {
       const query = new URLSearchParams(queryParams).toString();
@@ -23,7 +28,9 @@ export default function useRouteState() {
 
   useEffect(() => {
     const updateRouteInfo = () => {
-      const queryParams = Object.fromEntries(new URLSearchParams(window.location.search));
+      const queryParams = Object.fromEntries(
+        new URLSearchParams(window.location.search)
+      );
       setRouteParams(queryParams);
       setCurrentRoute(window.location.pathname);
     };
@@ -35,11 +42,11 @@ export default function useRouteState() {
     };
 
     // Attach the event listener for route changes
-    window.addEventListener('popstate', handleRouteChange);
+    window.addEventListener("popstate", handleRouteChange);
 
     return () => {
       // Clean up the event listener
-      window.removeEventListener('popstate', handleRouteChange);
+      window.removeEventListener("popstate", handleRouteChange);
     };
   }, []); // Run only once on mount
 

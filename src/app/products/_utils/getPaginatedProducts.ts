@@ -1,11 +1,4 @@
-type Product = {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
-  discount: number | null | undefined;
-};
+import { Product } from "@/lib/types";
 
 export const getPaginatedProducts = (
   products: Product[],

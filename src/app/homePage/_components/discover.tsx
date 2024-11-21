@@ -26,7 +26,6 @@ const Discover = () => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };
